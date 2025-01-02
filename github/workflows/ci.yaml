@@ -1,12 +1,13 @@
 name: ci-wf
 on: 
   push: 
-    branches: [ develop ]
+    branches: 
+      - develop
   pull_request:
     branches: 
       - develop
 jobs:
-  ci-job:
+  name:
     runs-on: ubuntu-latest
     steps:
       - name: welcome
@@ -15,9 +16,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Repository Information
         run: |
-           echo "Repository Name: ${{github.repository}}"  //expression syntax
+           echo "Repository Name: ${{github.repository}}" 
            echo "Type of Event: ${{github.event_name}}"
-           git -v (to check if git is installed or no)
+           git -v 
            git branch
-           git log (to check commits in the branch)
+           git log 
 
